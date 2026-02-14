@@ -18,9 +18,6 @@
       gnupg
       gh
       tree
-      steam
-      steam-run
-      steamcmd
     ];
     variables = {
       EDITOR = "vim";
