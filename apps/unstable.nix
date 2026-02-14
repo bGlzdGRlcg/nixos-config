@@ -1,0 +1,46 @@
+{ pkgs, ... }:
+
+{
+  users.users.listder.packages = with pkgs; [
+    google-chrome
+    fish
+    cmake
+    telegram-desktop
+    calibre
+    libreoffice
+    localsend
+    protonup-qt
+    reqable
+    scrcpy
+    android-tools
+    termius
+    qbittorrent
+    android-studio-full
+    aseprite
+    blender
+    obs-studio
+    fontforge
+    gimp
+    inkscape
+    synfigstudio
+    musescore
+    qview
+    rawtherapee
+    ardour
+    audacity
+    lmms
+    losslesscut-bin
+    mkvtoolnix
+    subtitlecomposer
+    tagger
+    tsukimi
+    vlc
+    yuview
+    hmcl
+    aria2
+    vscode
+    kdePackages.kcharselect
+    kdePackages.kleopatra
+    kdePackages.kdenlive
+  ];
+}
