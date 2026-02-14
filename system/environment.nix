@@ -18,6 +18,7 @@
       gnupg
       gh
       tree
+      aria2
     ];
     variables = {
       EDITOR = "vim";

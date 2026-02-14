@@ -41,5 +41,23 @@
         PasswordAuthentication = true;
       };
     };
+
+    aria2 = {
+      enable = true;
+      settings = {
+        dir = "/home/listder/Downloads";
+        continue = true;
+        user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.7117.93 Safari/537.36";
+        always-resume = true;
+        check-integrity = true;
+        min-split-size = "10M";
+        split = 64;
+        max-concurrent-downloads = 3;
+        max-connection-per-server = 16;
+        connect-timeout = 120;
+      };
+      rpcSecretFile = "/etc/nixos/secrets/aria2-rpc-token.txt";
+      openPorts = true;
+    };
   };
 }

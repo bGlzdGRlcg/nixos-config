@@ -37,7 +37,6 @@
     vlc
     yuview
     hmcl
-    aria2
     vscode
     kdePackages.kcharselect
     kdePackages.kleopatra
