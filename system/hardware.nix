@@ -6,6 +6,11 @@
   ...
 }:
 
+let
+  aic8800d80 = pkgs.callPackage ./aic8800d80 { };
+  aic8800d80Firmware = aic8800d80.firmware;
+  aic8800d80Module = aic8800d80.mkModule config.boot.kernelPackages;
+in
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
@@ -34,10 +39,20 @@
         canTouchEfiVariables = true;
       };
     };
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
+    kernelModules = [
+      "kvm-intel"
+      "aic_load_fw"
+      "aic8800_fdrv"
+    ];
+    extraModprobeConfig = ''
+      options aic_load_fw aic_fw_path=/run/current-system/firmware/aic8800D80
+    '';
+    extraModulePackages = [ aic8800d80Module ];
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   };
+
+  services.udev.packages = [ aic8800d80Firmware ];
+  hardware.firmware = [ aic8800d80Firmware ];
 
   fileSystems = {
     "/" = {

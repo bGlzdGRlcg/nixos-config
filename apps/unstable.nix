@@ -38,6 +38,7 @@
     yuview
     hmcl
     vscode
+    jetbrains.datagrip
     kdePackages.kcharselect
     kdePackages.kleopatra
     kdePackages.kdenlive
