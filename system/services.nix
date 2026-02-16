@@ -59,5 +59,11 @@
       rpcSecretFile = "/etc/nixos/secrets/aria2-rpc-token.txt";
       openPorts = true;
     };
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
   };
 }

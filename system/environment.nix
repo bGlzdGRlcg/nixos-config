@@ -19,6 +19,7 @@
       gh
       tree
       aria2
+      direnv
     ];
     variables = {
       EDITOR = "vim";
