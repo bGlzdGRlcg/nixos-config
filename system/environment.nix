@@ -20,6 +20,7 @@
       mtr
       traceroute
       file
+      binwalk
       clang
       clang-tools
       tree
