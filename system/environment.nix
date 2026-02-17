@@ -20,6 +20,9 @@
       tree
       aria2
       direnv
+      unrar
+      p7zip
+      unzip
     ];
     variables = {
       EDITOR = "vim";
