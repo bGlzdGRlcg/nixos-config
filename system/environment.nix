@@ -21,6 +21,7 @@
       traceroute
       file
       clang
+      clang-tools
       tree
       aria2
       direnv
