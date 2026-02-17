@@ -19,6 +19,7 @@
       gh
       mtr
       traceroute
+      file
       tree
       aria2
       direnv
