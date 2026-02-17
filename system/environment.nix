@@ -17,6 +17,8 @@
       distrobox
       gnupg
       gh
+      mtr
+      traceroute
       tree
       aria2
       direnv
