@@ -20,6 +20,7 @@
       mtr
       traceroute
       file
+      clang
       tree
       aria2
       direnv
