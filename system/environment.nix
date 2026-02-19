@@ -19,6 +19,7 @@
       gh
       mtr
       traceroute
+      nexttrace
       file
       binwalk
       clang
