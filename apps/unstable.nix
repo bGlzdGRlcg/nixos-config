@@ -3,7 +3,6 @@
 {
   users.users.listder.packages = with pkgs; [
     google-chrome
-    fish
     cmake
     telegram-desktop
     calibre
