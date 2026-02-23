@@ -31,6 +31,7 @@
       p7zip
       unzip
       safe-rm
+      dnsutils
     ];
     variables = {
       EDITOR = "vim";
