@@ -5,7 +5,6 @@
     google-chrome
     cmake
     telegram-desktop
-    calibre
     libreoffice
     localsend
     protonup-qt
