@@ -37,7 +37,6 @@
     hmcl
     vscode
     _010editor
-    linux-wifi-hotspot
     jetbrains.datagrip
     kdePackages.kcharselect
     kdePackages.kleopatra
