@@ -28,9 +28,16 @@
       pulse.enable = true;
     };
 
-    dae = {
-      configFile = "/etc/dae/config.dae";
+    # dae = {
+    #   configFile = "/etc/dae/config.dae";
+    #   enable = true;
+    # };
+
+    mihomo = {
       enable = true;
+      tunMode = true;
+      webui = "/var/lib/private/mihomo/zashboard/";
+      configFile = "/etc/mihomo/config.yaml";
     };
 
     openssh = {
