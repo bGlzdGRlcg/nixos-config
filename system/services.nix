@@ -98,5 +98,7 @@
         boost = pkgs.boost187;
       };
     };
+
+    haveged.enable = true;
   };
 }

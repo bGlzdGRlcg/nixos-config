@@ -32,6 +32,7 @@
       unzip
       safe-rm
       dnsutils
+      rng-tools
     ];
     variables = {
       EDITOR = "vim";
