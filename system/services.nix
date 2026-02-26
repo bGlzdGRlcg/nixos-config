@@ -75,7 +75,7 @@
     aria2 = {
       enable = true;
       settings = {
-        dir = "/home/listder/Downloads";
+        dir = "/var/lib/aria2/Downloads/";
         continue = true;
         user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.7117.93 Safari/537.36";
         always-resume = true;
