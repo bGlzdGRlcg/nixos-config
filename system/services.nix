@@ -53,22 +53,21 @@
       enable = true;
       settings = {
         INTERNET_IFACE = "Meta";
-        WIFI_IFACE="wlan0";
-        CHANNEL=36;
-        USE_PSK=0;
-        SSID="popipa";
-        PASSPHRASE="ciallo0721";
-        GATEWAY="192.168.12.1";
-        WPA_VERSION=2;
-        HIDDEN=0;
-        IEEE80211N=1;
-        IEEE80211AC=1;
-        IEEE80211AX=1;
-        HT_CAPAB="[HT40+]";
-        VHT_CAPAB="[SHORT-GI-80][MAX-MP-PD-128]";
-        NO_VIRT=1;
-        COUNTRY="CN";
-        FREQ_BAND=5;
+        WIFI_IFACE = "wlan0";
+        CHANNEL = 48;
+        USE_PSK = 0;
+        SSID = "popipa";
+        PASSPHRASE = "ciallo0721";
+        GATEWAY = "192.168.12.1";
+        WPA_VERSION = 2;
+        HIDDEN = 0;
+        IEEE80211N = 1;
+        IEEE80211AC = 1;
+        IEEE80211AX = 1;
+        HT_CAPAB = "[HT40-][SHORT-GI-20][SHORT-GI-40]";
+        NO_VIRT = 1;
+        COUNTRY = "CN";
+        FREQ_BAND = 5;
       };
     };
 
@@ -100,5 +99,46 @@
     };
 
     haveged.enable = true;
+  };
+
+  systemd.services = {
+    wifi-tuning = {
+      description = "WiFi tuning";
+      after = [
+        "network.target"
+        "create_ap.service"
+      ];
+      wantedBy = [ "multi-user.target" ];
+
+      serviceConfig = {
+        Type = "oneshot";
+      };
+
+      script = ''
+        ${pkgs.iw}/bin/iw dev wlan0 set power_save off || true
+        ${pkgs.iw}/bin/iw dev wlan0 set txpower fixed 2000 || true
+      '';
+    };
+
+    create_ap = {
+      after = [
+        "mihomo.service"
+        "network-online.target"
+      ];
+      wants = [
+        "mihomo.service"
+        "network-online.target"
+      ];
+      requires = [ "mihomo.service" ];
+      preStart = ''
+        for i in $(seq 1 50); do
+          if ${pkgs.iproute2}/bin/ip link show Meta >/dev/null 2>&1; then
+            exit 0
+          fi
+          sleep 0.2
+        done
+        exit 1
+      '';
+    };
   };
 }

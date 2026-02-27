@@ -46,9 +46,14 @@ in
     ];
     extraModprobeConfig = ''
       options aic_load_fw aic_fw_path=/run/current-system/firmware/aic8800D80
+      options aic8800_fdrv power_save=0
     '';
     extraModulePackages = [ aic8800d80Module ];
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernel.sysctl = {
+      "net.core.default_qdisc" = "fq";
+      "net.ipv4.tcp_congestion_control" = "bbr";
+    };
   };
 
   services.udev.packages = [ aic8800d80Firmware ];
@@ -94,7 +99,10 @@ in
 
   networking = {
     hostName = "listder";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      settings.keyfile.unmanaged-devices = "interface-name:wlan0";
+    };
     firewall.enable = false;
   };
 

@@ -33,6 +33,7 @@
       safe-rm
       dnsutils
       rng-tools
+      iw
     ];
     variables = {
       EDITOR = "vim";
