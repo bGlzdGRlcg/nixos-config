@@ -37,6 +37,9 @@
       qemu
       swtpm
       dnsmasq
+      asusctl
+      intel-undervolt
+      virtio-win
     ];
     variables = {
       EDITOR = "vim";

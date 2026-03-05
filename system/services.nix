@@ -88,23 +88,43 @@
       rpcSecretFile = "/etc/nixos/secrets/aria2-rpc-token.txt";
       openPorts = true;
     };
+
     sunshine = {
       enable = true;
       autoStart = true;
       capSysAdmin = true;
       openFirewall = true;
-      package = pkgs.sunshine.override {
-        boost = pkgs.boost187;
+      # package = pkgs.sunshine.override {
+      #   boost = pkgs.boost187;
+      # };
+    };
+
+    samba = {
+      enable = true;
+      securityType = "user";
+      settings = {
+        global = {
+          "workgroup" = "WORKGROUP";
+          "server string" = "smbnix";
+          "netbios name" = "smbnix";
+          "security" = "user";
+          "hosts allow" = "192.168. 127.0.0.1 localhost";
+          "hosts deny" = "0.0.0.0/0";
+        };
+        "windows" = {
+          "path" = "/run/media/listder/listder/Windows";
+          "browseable" = "yes";
+          "read only" = "no";
+          "guest ok" = "yes";
+          "create mask" = "0644";
+          "directory mask" = "0755";
+        };
       };
     };
 
-    davfs2 = {
-      enable = true;
-      settings.globalSection.ask_auth = 0;
-    };
-
+    asusd.enable = true;
     haveged.enable = true;
-    spice-webdavd.enable = true;
+    qemuGuest.enable = true;
   };
 
   systemd.services = {

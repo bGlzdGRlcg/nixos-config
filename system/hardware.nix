@@ -25,7 +25,11 @@ in
         "usb_storage"
         "sr_mod"
       ];
-      kernelModules = [ ];
+      kernelModules = [
+        "vfio_pci"
+        "vfio"
+        "vfio_iommu_type1"
+      ];
     };
     loader = {
       grub = {
@@ -43,6 +47,11 @@ in
       "kvm-intel"
       "aic_load_fw"
       "aic8800_fdrv"
+    ];
+    kernelParams = [
+      "intel_iommu=on"
+      "intel_pstate=active"
+      "intel_idle.max_cstate=1"
     ];
     extraModprobeConfig = ''
       options aic_load_fw aic_fw_path=/run/current-system/firmware/aic8800D80

@@ -37,6 +37,7 @@
     hmcl
     vscode
     calibre
+    btop
     _010editor
     jetbrains.datagrip
     kdePackages.kcharselect
