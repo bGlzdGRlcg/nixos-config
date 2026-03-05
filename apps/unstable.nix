@@ -36,6 +36,7 @@
     yuview
     hmcl
     vscode
+    calibre
     _010editor
     jetbrains.datagrip
     kdePackages.kcharselect

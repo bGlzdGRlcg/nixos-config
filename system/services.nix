@@ -98,7 +98,13 @@
       };
     };
 
+    davfs2 = {
+      enable = true;
+      settings.globalSection.ask_auth = 0;
+    };
+
     haveged.enable = true;
+    spice-webdavd.enable = true;
   };
 
   systemd.services = {

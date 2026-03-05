@@ -30,5 +30,7 @@
         systemd
       ];
     };
+
+    virt-manager.enable = true;
   };
 }

@@ -1,7 +1,6 @@
 {
   imports = [
-    ./distrobox.nix
+    ./virt.nix
     ./programs.nix
-    ./virtualbox.nix
   ];
 }

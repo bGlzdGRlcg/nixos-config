@@ -34,6 +34,9 @@
       dnsutils
       rng-tools
       iw
+      qemu
+      swtpm
+      dnsmasq
     ];
     variables = {
       EDITOR = "vim";

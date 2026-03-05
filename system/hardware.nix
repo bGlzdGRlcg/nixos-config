@@ -47,6 +47,7 @@ in
     extraModprobeConfig = ''
       options aic_load_fw aic_fw_path=/run/current-system/firmware/aic8800D80
       options aic8800_fdrv power_save=0
+      options kvm_intel nested=1
     '';
     extraModulePackages = [ aic8800d80Module ];
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
@@ -54,6 +55,14 @@ in
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
     };
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+      "riscv64-linux"
+      "s390x-linux"
+      "loongarch64-linux"
+      "i686-windows"
+      "x86_64-windows"
+    ];
   };
 
   services.udev.packages = [ aic8800d80Firmware ];
