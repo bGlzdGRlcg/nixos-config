@@ -75,7 +75,13 @@ in
   };
 
   services.udev.packages = [ aic8800d80Firmware ];
-  hardware.firmware = [ aic8800d80Firmware ];
+  hardware = {
+    firmware = [ aic8800d80Firmware ];
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
 
   fileSystems = {
     "/" = {

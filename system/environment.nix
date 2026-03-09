@@ -40,6 +40,8 @@
       asusctl
       intel-undervolt
       virtio-win
+      pkg-config
+      gnumake
     ];
     variables = {
       EDITOR = "vim";

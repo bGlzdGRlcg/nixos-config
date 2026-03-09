@@ -28,6 +28,9 @@
         util-linux
         xz
         systemd
+        vulkan-loader
+        vulkan-headers
+        mesa
       ];
     };
 
