@@ -42,6 +42,8 @@
       virtio-win
       pkg-config
       gnumake
+      ffmpeg
+      arp-scan
     ];
     variables = {
       EDITOR = "vim";
