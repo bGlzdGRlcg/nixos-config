@@ -52,6 +52,9 @@ in
       "intel_iommu=on"
       "intel_pstate=active"
       "intel_idle.max_cstate=1"
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.max_pool_percent=20"
     ];
     extraModprobeConfig = ''
       options aic_load_fw aic_fw_path=/run/current-system/firmware/aic8800D80
@@ -63,6 +66,7 @@ in
     kernel.sysctl = {
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
+      "vm.swappiness" = 25;
     };
     binfmt.emulatedSystems = [
       "aarch64-linux"
@@ -120,6 +124,10 @@ in
   };
 
   swapDevices = [ { device = "/dev/disk/by-uuid/3e6eff8e-96e2-4be0-99f2-8b9db88988d2"; } ];
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+  };
 
   networking = {
     hostName = "listder";
