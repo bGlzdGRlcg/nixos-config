@@ -13,7 +13,7 @@
     android-tools
     termius
     qbittorrent
-    android-studio-full
+    android-studio
     aseprite
     blender
     obs-studio
