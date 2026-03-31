@@ -38,6 +38,16 @@
     vscode
     calibre
     btop
+    nodejs_25
+    pnpm
+    pkg-config
+    zlib
+    opencv
+    go
+    gopls
+    jdk25
+    gradle
+    maven
     _010editor
     jetbrains.datagrip
     kdePackages.kcharselect
