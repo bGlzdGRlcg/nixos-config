@@ -3,7 +3,6 @@
 {
   users.users.listder.packages = with pkgs; [
     google-chrome
-    firefox
     cmake
     telegram-desktop
     libreoffice
