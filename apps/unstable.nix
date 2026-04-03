@@ -43,6 +43,7 @@
     pkg-config
     zlib
     opencv
+    gcc
     go
     gopls
     jdk25
