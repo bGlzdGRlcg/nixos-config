@@ -49,6 +49,7 @@
     jdk25
     gradle
     maven
+    python315
     _010editor
     jetbrains.datagrip
     kdePackages.kcharselect
