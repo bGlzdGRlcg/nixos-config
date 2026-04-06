@@ -50,6 +50,7 @@
     gradle
     maven
     python315
+    deadbeef
     _010editor
     jetbrains.datagrip
     kdePackages.kcharselect
