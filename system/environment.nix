@@ -44,6 +44,55 @@
       gnumake
       ffmpeg
       arp-scan
+      nix-ld
+      patchelf
+      (
+        let
+          base = pkgs.appimageTools.defaultFhsEnvArgs;
+        in
+        pkgs.buildFHSEnv (
+          base
+          // {
+            name = "fhs";
+            targetPkgs =
+              pkgs:
+              (base.targetPkgs pkgs)
+              ++ (with pkgs; [
+                glib
+                gtk3
+                nss
+                nspr
+                atk
+                at-spi2-atk
+                cairo
+                pango
+                gdk-pixbuf
+                dbus
+                cups
+
+                libX11
+                libXcomposite
+                libXdamage
+                libXext
+                libXfixes
+                libXrandr
+                libxcb
+                libxkbcommon
+
+                mesa
+                libgbm
+                libdrm
+                vulkan-loader
+
+                alsa-lib
+                expat
+              ]);
+            profile = "export FHS=1";
+            runScript = "bash";
+            extraOutputsToInstall = [ "dev" ];
+          }
+        )
+      )
     ];
     variables = {
       EDITOR = "vim";

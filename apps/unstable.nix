@@ -52,6 +52,7 @@
     python315
     deadbeef
     _010editor
+    (callPackage ./apifox.nix { })
     jetbrains.datagrip
     kdePackages.kcharselect
     kdePackages.kleopatra
