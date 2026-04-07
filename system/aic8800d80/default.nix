@@ -6,8 +6,8 @@ let
   src = fetchFromGitHub {
     owner = "shenmintao";
     repo = "aic8800d80";
-    rev = "dda6a6d546324786d802f452ef854aeea7b52af5";
-    hash = "sha256-TD4qpTqu3D9PmygSOMLQgjyWJF8kqebKFd3TI57RfPY=";
+    rev = "05710dff05dabce66ab3ee80f40484892c512b3c";
+    hash = "sha256-QVpuJrCssBf4fwycq7oN0Oi9OxpQUqrSTQuHk5UE9+U=";
   };
 
   commonMeta = {

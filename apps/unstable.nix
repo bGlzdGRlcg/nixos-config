@@ -51,6 +51,7 @@
     maven
     python315
     deadbeef
+    opencode
     _010editor
     (callPackage ./apifox.nix { })
     jetbrains.datagrip
