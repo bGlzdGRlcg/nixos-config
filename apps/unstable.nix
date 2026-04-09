@@ -53,6 +53,7 @@
     deadbeef
     opencode
     _010editor
+    splayer
     (callPackage ./apifox.nix { })
     jetbrains.datagrip
     kdePackages.kcharselect
