@@ -46,6 +46,7 @@
     gcc
     go
     gopls
+    flutter
     jdk25
     gradle
     maven
