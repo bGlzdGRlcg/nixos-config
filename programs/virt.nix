@@ -15,9 +15,9 @@
       };
     };
     spiceUSBRedirection.enable = true;
-    waydroid = {
-        enable = true;
-        package = pkgs.waydroid-nftables;
-    };
+    # waydroid = {
+    #     enable = true;
+    #     package = pkgs.waydroid-nftables;
+    # };
   };
 }
