@@ -64,6 +64,9 @@ in
     extraModulePackages = [ aic8800d80Module ];
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     kernel.sysctl = {
+      "net.ipv4.ip_forward" = 1;
+      "net.ipv6.conf.default.forwarding" = 1;
+      "net.ipv6.conf.all.forwarding" = 1;
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
       "vm.swappiness" = 25;
