@@ -58,6 +58,7 @@
     rustup
     cargo
     cherry-studio
+    psmisc
     (pkgs.tsukimi.overrideAttrs (_: rec {
       version = "25.5.0";
       enableParallelBuilding = true;
