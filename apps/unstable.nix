@@ -57,6 +57,7 @@
     splayer
     rustup
     cargo
+    cherry-studio
     (pkgs.tsukimi.overrideAttrs (_: rec {
       version = "25.5.0";
       enableParallelBuilding = true;
