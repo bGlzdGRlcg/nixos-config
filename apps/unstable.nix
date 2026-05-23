@@ -59,6 +59,7 @@
     cargo
     cherry-studio
     psmisc
+    codex
     (pkgs.tsukimi.overrideAttrs (_: rec {
       version = "25.5.0";
       enableParallelBuilding = true;
