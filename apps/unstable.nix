@@ -38,7 +38,7 @@
     vscode
     calibre
     btop
-    nodejs_25
+    nodejs_26
     pnpm
     pkg-config
     zlib
