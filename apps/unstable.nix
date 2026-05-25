@@ -60,6 +60,7 @@
     cherry-studio
     psmisc
     codex
+    claude-code
     (pkgs.tsukimi.overrideAttrs (_: rec {
       version = "25.5.0";
       enableParallelBuilding = true;
