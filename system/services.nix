@@ -2,6 +2,10 @@
 
 {
   services = {
+    tailscale = {
+      enable = true;
+      authKeyFile = "/var/lib/tailscale/key";
+    };
     fprintd.enable = true;
     xserver = {
       videoDrivers = [ "modesetting" ];
