@@ -1,13 +1,13 @@
 { lib, fetchFromGitHub, callPackage }:
 
 let
-  version = "unstable-f8df5e7";
+  version = "unstable-a5db07c";
 
   src = fetchFromGitHub {
     owner = "shenmintao";
     repo = "aic8800d80";
-    rev = "f8df5e741e24656fcd8e5d309e417f675cdcc5d0";
-    hash = "sha256-a06YBX82bov5pu5Byhvx7BRAQMNm6QZGW/44AnWqwMc=";
+    rev = "a5db07c4d43fd0099bf90784b9295984cc22a310";
+    hash = "sha256-KyniKjCZFmbGCi7K7RaeXOtoZhxwaW//WoML4r7vpGM=";
   };
 
   commonMeta = {
