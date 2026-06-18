@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
   };
 
   nixConfig.experimental-features = [
@@ -13,11 +13,10 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       nixpkgs-stable,
       ...
-    }@inputs:
+    }:
     {
       nixosConfigurations.listder = nixpkgs.lib.nixosSystem {
         specialArgs =
