@@ -76,6 +76,8 @@
       };
     }))
     (callPackage ./apifox.nix { })
+    (callPackage ./fingerprint-chromium.nix { })
+    (callPackage ./ant-browser.nix { })
     (writeShellScriptBin "envjs" ''
       set -euo pipefail
 
