@@ -61,20 +61,7 @@
     psmisc
     codex
     claude-code
-    (pkgs.tsukimi.overrideAttrs (_: rec {
-      version = "25.5.0";
-      enableParallelBuilding = true;
-      src = pkgs.fetchFromGitHub {
-        owner = "tsukinaha";
-        repo = "tsukimi";
-        rev = "fc419ea97717b13ddfb27b9fb9377f105d4d949b";
-        hash = "sha256-9jB1Lj1TxSMoF6wi4zyLEjh9/lhDzkHnUk6vHx5t+mA=";
-      };
-      cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
-        inherit src;
-        hash = "sha256-iUaMnVo76JTUflkkZh0DnkD147Amd2UTFT2bHH3o46Q=";
-      };
-    }))
+    tsukimi
     (callPackage ./apifox.nix { })
     (writeShellScriptBin "envjs" ''
       set -euo pipefail
