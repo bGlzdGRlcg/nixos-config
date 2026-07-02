@@ -19,6 +19,10 @@
     config = {
       android_sdk.accept_license = true;
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "pnpm-10.29.2"
+      ];
+
     };
   };
   time.timeZone = "Asia/Shanghai";

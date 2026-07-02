@@ -81,8 +81,6 @@ in
     ];
   };
 
-  system.boot.loader.kernelFile = "vmlinuz";
-
   services.udev.packages = [ aic8800d80Firmware ];
   hardware = {
     firmware = [ aic8800d80Firmware ];
