@@ -4,14 +4,7 @@
   pkgs,
   modulesPath,
   ...
-}:
-
-let
-  aic8800d80 = pkgs.callPackage ./aic8800d80 { };
-  aic8800d80Firmware = aic8800d80.firmware;
-  aic8800d80Module = aic8800d80.mkModule config.boot.kernelPackages;
-in
-{
+}:{
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot = {
@@ -45,8 +38,6 @@ in
     };
     kernelModules = [
       "kvm-intel"
-      "aic_load_fw"
-      "aic8800_fdrv"
     ];
     kernelParams = [
       "intel_iommu=on"
@@ -57,11 +48,8 @@ in
       "zswap.max_pool_percent=20"
     ];
     extraModprobeConfig = ''
-      options aic_load_fw aic_fw_path=/run/current-system/firmware/aic8800D80
-      options aic8800_fdrv power_save=0
       options kvm_intel nested=1
     '';
-    extraModulePackages = [ aic8800d80Module ];
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     kernel.sysctl = {
       "net.ipv4.ip_forward" = 1;
@@ -80,10 +68,7 @@ in
       "x86_64-windows"
     ];
   };
-
-  services.udev.packages = [ aic8800d80Firmware ];
   hardware = {
-    firmware = [ aic8800d80Firmware ];
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -136,7 +121,7 @@ in
     hostName = "listder";
     networkmanager = {
       enable = true;
-      settings.keyfile.unmanaged-devices = "interface-name:wlan0";
+      settings.keyfile.unmanaged-devices = "interface-name:wlo1";
     };
     firewall = {
       checkReversePath = false;

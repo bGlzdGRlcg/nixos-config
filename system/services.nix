@@ -57,21 +57,14 @@
       enable = true;
       settings = {
         INTERNET_IFACE = "Meta";
-        WIFI_IFACE = "wlan0";
-        CHANNEL = 48;
+        WIFI_IFACE = "wlo1";
         USE_PSK = 0;
         SSID = "popipa";
         PASSPHRASE = "ciallo0721";
         GATEWAY = "192.168.12.1";
         WPA_VERSION = 2;
         HIDDEN = 0;
-        IEEE80211N = 1;
-        IEEE80211AC = 1;
-        IEEE80211AX = 1;
-        HT_CAPAB = "[HT40-][SHORT-GI-20][SHORT-GI-40]";
         NO_VIRT = 1;
-        COUNTRY = "CN";
-        FREQ_BAND = 5;
       };
     };
 
