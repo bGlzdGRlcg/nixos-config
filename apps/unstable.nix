@@ -22,7 +22,7 @@
     gimp
     inkscape
     synfigstudio
-    musescore
+    # musescore
     qview
     rawtherapee
     ardour
@@ -38,7 +38,7 @@
     vscode
     calibre
     btop
-    nodejs_26
+    nodejs_latest
     pnpm
     pkg-config
     zlib
@@ -51,16 +51,13 @@
     gradle
     maven
     python315
-    deadbeef
-    opencode
+    # deadbeef
     _010editor
     splayer
     rustup
     cargo
     cherry-studio
     psmisc
-    codex
-    claude-code
     tsukimi
     (callPackage ./apifox.nix { })
     (writeShellScriptBin "envjs" ''

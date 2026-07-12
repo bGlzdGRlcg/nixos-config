@@ -115,6 +115,7 @@
       NIXPKGS_ALLOW_UNFREE = 1;
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       LD_LIBRARY_PATH = ".";
+      PNPM_HOME = "$HOME/.local/share/pnpm";
     };
     shellAliases = {
       rm = "safe-rm";

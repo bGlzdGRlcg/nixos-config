@@ -2,10 +2,6 @@
 
 {
   services = {
-    tailscale = {
-      enable = true;
-      authKeyFile = "/var/lib/tailscale/key";
-    };
     fprintd.enable = true;
     xserver = {
       videoDrivers = [ "modesetting" ];
@@ -50,21 +46,6 @@
         X11Forwarding = true;
         PermitRootLogin = "yes";
         PasswordAuthentication = true;
-      };
-    };
-
-    create_ap = {
-      enable = true;
-      settings = {
-        INTERNET_IFACE = "Meta";
-        WIFI_IFACE = "wlo1";
-        USE_PSK = 0;
-        SSID = "popipa";
-        PASSPHRASE = "ciallo0721";
-        GATEWAY = "192.168.12.1";
-        WPA_VERSION = 2;
-        HIDDEN = 0;
-        NO_VIRT = 1;
       };
     };
 
@@ -121,46 +102,5 @@
     asusd.enable = true;
     haveged.enable = true;
     qemuGuest.enable = true;
-  };
-
-  systemd.services = {
-    wifi-tuning = {
-      description = "WiFi tuning";
-      after = [
-        "network.target"
-        "create_ap.service"
-      ];
-      wantedBy = [ "multi-user.target" ];
-
-      serviceConfig = {
-        Type = "oneshot";
-      };
-
-      script = ''
-        ${pkgs.iw}/bin/iw dev wlan0 set power_save off || true
-        ${pkgs.iw}/bin/iw dev wlan0 set txpower fixed 2000 || true
-      '';
-    };
-
-    create_ap = {
-      after = [
-        "mihomo.service"
-        "network-online.target"
-      ];
-      wants = [
-        "mihomo.service"
-        "network-online.target"
-      ];
-      requires = [ "mihomo.service" ];
-      preStart = ''
-        for i in $(seq 1 50); do
-          if ${pkgs.iproute2}/bin/ip link show Meta >/dev/null 2>&1; then
-            exit 0
-          fi
-          sleep 0.2
-        done
-        exit 1
-      '';
-    };
   };
 }

@@ -70,7 +70,7 @@ stdenvNoCC.mkDerivation {
 
 	src = fetchurl {
 		url = "https://file-assets.apifox.com/download/Apifox-linux-manual-latest.tar.gz";
-		hash = "sha256-WXJYW/5ENbdyVGBzEo/G0METf/V5frupBDFlru1KHgA=";
+		hash = "sha256-5P1XlHMJigud5FrtypP3i7hZkock5ZrbAjejpGZYdQM=";
 	};
 
 	nativeBuildInputs = [
