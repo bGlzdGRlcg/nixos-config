@@ -59,6 +59,7 @@
     cherry-studio
     psmisc
     tsukimi
+    bubblewrap
     (callPackage ./apifox.nix { })
     (writeShellScriptBin "envjs" ''
       set -euo pipefail
