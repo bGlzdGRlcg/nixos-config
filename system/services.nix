@@ -72,9 +72,6 @@
       autoStart = true;
       capSysAdmin = true;
       openFirewall = true;
-      # package = pkgs.sunshine.override {
-      #   boost = pkgs.boost187;
-      # };
     };
 
     samba = {

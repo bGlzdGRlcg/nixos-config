@@ -22,7 +22,7 @@
     gimp
     inkscape
     synfigstudio
-    # musescore
+    musescore
     qview
     rawtherapee
     ardour
@@ -51,8 +51,8 @@
     gradle
     maven
     python315
-    # deadbeef
-    _010editor
+    deadbeef
+    imhex
     splayer
     rustup
     cargo
