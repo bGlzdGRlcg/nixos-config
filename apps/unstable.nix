@@ -61,6 +61,7 @@
     tsukimi
     bubblewrap
     (callPackage ./apifox.nix { })
+    (callPackage ./chatgpt.nix { })
     (writeShellScriptBin "envjs" ''
       set -euo pipefail
 
