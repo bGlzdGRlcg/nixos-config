@@ -25,6 +25,6 @@
       ];
     };
   };
-  time.timeZone = "Asia/Shanghai";
+  time.timeZone = "Asia/Singapore";
   system.stateVersion = "25.11";
 }
