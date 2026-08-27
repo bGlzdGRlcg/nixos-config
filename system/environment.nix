@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   environment = {
@@ -71,40 +71,13 @@
           base
           // {
             name = "fhs";
-            targetPkgs =
-              pkgs:
-              (base.targetPkgs pkgs)
-              ++ (with pkgs; [
-                glib
-                gtk3
-                nss
-                nspr
-                atk
-                at-spi2-atk
-                cairo
-                pango
-                gdk-pixbuf
-                dbus
-                cups
-
-                libX11
-                libXcomposite
-                libXdamage
-                libXext
-                libXfixes
-                libXrandr
-                libxcb
-                libxkbcommon
-
-                mesa
-                libgbm
-                libdrm
-                vulkan-loader
-
-                alsa-lib
-                expat
-              ]);
-            profile = "export FHS=1";
+            targetPkgs = pkgs: (base.targetPkgs pkgs) ++ config.programs.nix-ld.libraries;
+            profile = ''
+              export FHS=1
+              # Nix-store interpreters (e.g. a venv's python) ignore /usr/lib,
+              # so pip wheels with unpatched .so files need it on the search path.
+              export LD_LIBRARY_PATH=/usr/lib
+            '';
             runScript = "bash";
             extraOutputsToInstall = [ "dev" ];
           }
@@ -117,6 +90,7 @@
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       LD_LIBRARY_PATH = ".";
       PNPM_HOME = "$HOME/.local/share/pnpm";
+      PKG_CONFIG_PATH = "/etc/profiles/per-user/listder/lib/pkgconfig:/run/current-system/sw/lib/pkgconfig";
     };
     shellAliases = {
       rm = "safe-rm";

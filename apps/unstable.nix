@@ -5,7 +5,7 @@
     google-chrome
     firefox
     cmake
-    telegram-desktop
+    ayugram-desktop
     libreoffice
     localsend
     protonup-qt
@@ -15,7 +15,6 @@
     termius
     qbittorrent
     android-studio
-    aseprite
     blender
     obs-studio
     fontforge
@@ -46,7 +45,7 @@
     gcc
     go
     gopls
-    flutter
+    (flutter.override { extraPkgConfigPackages = [ libsecret ]; })
     jdk25
     gradle
     maven
@@ -60,8 +59,9 @@
     psmisc
     tsukimi
     bubblewrap
+    sigil
+    agent-browser
     (callPackage ./apifox.nix { })
-    (callPackage ./chatgpt.nix { })
     (writeShellScriptBin "envjs" ''
       set -euo pipefail
 

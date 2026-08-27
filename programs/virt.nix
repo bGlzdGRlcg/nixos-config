@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
   virtualisation = {
+    containers.registries.settings.registries.search.registries = [
+      "docker.io"
+      "quay.io"
+    ];
     podman = {
       enable = true;
       dockerCompat = true;
