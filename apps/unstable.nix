@@ -52,7 +52,7 @@
     python315
     deadbeef
     imhex
-    splayer
+    splayer-next
     rustup
     cargo
     cherry-studio

@@ -38,6 +38,10 @@
     };
     kernelModules = [
       "kvm-intel"
+      "v4l2loopback"
+    ];
+    extraModulePackages = [
+      config.boot.kernelPackages.v4l2loopback
     ];
     kernelParams = [
       "intel_iommu=on"
@@ -49,6 +53,7 @@
     ];
     extraModprobeConfig = ''
       options kvm_intel nested=1
+      options v4l2loopback devices=1 video_nr=1 card_label="Camera" exclusive_caps=1
     '';
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     kernel.sysctl = {
@@ -69,6 +74,10 @@
     ];
   };
   hardware = {
+    bluetooth= {
+      enable = true;
+      powerOnBoot = true;
+    };
     graphics = {
       enable = true;
       enable32Bit = true;

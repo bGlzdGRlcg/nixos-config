@@ -86,7 +86,7 @@
           "hosts deny" = "0.0.0.0/0";
         };
         "windows" = {
-          "path" = "/run/media/listder/listder/Windows";
+          "path" = "/home/listder/windows/";
           "browseable" = "yes";
           "read only" = "no";
           "guest ok" = "yes";
@@ -96,6 +96,7 @@
       };
     };
 
+    blueman.enable = true;
     asusd.enable = true;
     haveged.enable = true;
     qemuGuest.enable = true;
