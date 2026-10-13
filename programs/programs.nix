@@ -10,6 +10,7 @@
     };
     gnupg.agent.enable = true;
     steam.enable = true;
+    kdeconnect.enable = true;
 
     nix-ld = {
       enable = true;
